@@ -1,7 +1,34 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.Idiot!</p>
+<html><head>
+<script src="pythonscript.js"></script>
+
+<script type="text/python">
+
+count = 0
+
+def mycallback():
+    global count
+    print( con.getAttribute('id') )
+    btn = document.getElementById('mybutton')
+    btn.firstChild.nodeValue = 'COUNTER:'+count
+    count += 1
+
+a = 'hello'
+b = 'world'
+
+def test():
+    con = document.createElement( 'div' )
+    con.setAttribute('id', 'mydiv')
+    document.body.appendChild(con)
+    txt = document.createTextNode( a+b )
+    con.appendChild(txt)
+
+    window.setInterval( mycallback, 1000 )
+
+</script>
+
+</head><body>
+
+<button id="mybutton" onclick="test()">click me</button>
+
 </body>
 </html>
